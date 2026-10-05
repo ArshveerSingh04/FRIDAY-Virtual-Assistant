@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FRIDAY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="bg"></canvas>
+
+  <!-- Central Glowing Core -->
+  <div class="core">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+
+  <!-- HUD Panel -->
+  <div class="panel">
+    <h2 class="title">H.E.A.R.T</h2>
+
+    <div class="stat">
+      <label>CPU</label>
+      <div class="bar"><div id="cpu-bar" class="fill"></div></div>
+      <span id="cpu">--%</span>
+    </div>
+
+    <div class="stat">
+      <label>RAM</label>
+      <div class="bar"><div id="ram-bar" class="fill"></div></div>
+      <span id="ram">--%</span>
+    </div>
+
+    <div class="stat">
+      <label>Disk</label>
+      <div class="bar"><div id="disk-bar" class="fill"></div></div>
+      <span id="disk">--%</span>
+    </div>
+
+    <div class="stat">
+      <label>Battery</label>
+      <div class="bar"><div id="battery-bar" class="fill"></div></div>
+      <span id="battery">--%</span>
+    </div>
+
+    <div class="time">
+      <label>TIME</label>
+      <span id="time">--:--:--</span>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

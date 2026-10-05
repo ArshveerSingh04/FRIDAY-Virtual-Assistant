@@ -1,0 +1,99 @@
+/* General */
+body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  color: red;
+  font-family: Consolas, monospace;
+}
+
+/* Glowing Core */
+.core {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255,30,30,1) 0%, rgba(150,0,0,0.6) 70%, rgba(0,0,0,0) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 15px red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite alternate;
+}
+
+.ring {
+  position: absolute;
+  border: 2px solid rgba(255,0,0,0.5);
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+
+.ring:nth-child(1) { width: 250px; height: 250px; top: -50px; left: -50px; animation-duration: 8s; }
+.ring:nth-child(2) { width: 350px; height: 350px; top: -100px; left: -100px; animation-duration: 12s; }
+.ring:nth-child(3) { width: 450px; height: 450px; top: -150px; left: -150px; animation-duration: 16s; }
+
+@keyframes pulse {
+  from { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 30px 10px red; }
+  to   { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 60px 25px red; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Stats Panel */
+.panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: left;
+  color: red;
+  font-size: 14px;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.stat {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.stat label {
+  width: 60px;
+}
+
+.bar {
+  flex: 1;
+  height: 10px;
+  margin: 0 10px;
+  background: rgba(255,0,0,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar div {
+  height: 100%;
+  background: linear-gradient(90deg, red, orange);
+  width: 0%;
+  box-shadow: 0 0 10px red;
+  transition: width 0.5s ease-in-out;
+}
+
+.time {
+  margin-top: 15px;
+  font-size: 18px;
+  text-shadow: 0 0 10px red;
+}
+
+/* Background Canvas */
+#bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
